@@ -10,11 +10,40 @@ void	swap(t_list *nil)
 	top = nil->next;
 	second = top->next; // second->prev = first , second->next = third ; => second->prev = NULL, second->next = first;
 
+	top->prev->next = second;
+	second->next->prev = top;
+
 	top->next = second->next;
 	top->prev = second;
 	second->next = top;
 	second->prev = nil;
 }
+/*
+	swaps next element of args and next of next element of args.
+	0
+	1
+	2
+	3
+	-----
+	0
+	1
+	:: this is circular doubly linked list
+
+	if 1 pointer is given as argument,
+	2 and 3 swaps
+
+	0
+	1
+	3
+	2
+	----
+	0
+	1
+
+	this is for circular doubly linked list.
+
+	this changes next of swaped element. and prev of swapped elem.
+*/
 
 void	push(t_list *dst_nil, t_list *src_nil)
 {

@@ -28,16 +28,21 @@ int main(int argc, char **v)
 		ft_lstiter(lst, print);
 		swap(lst);
 
-	// ft_lstiter(lst, print);
-	printf("%p\n", lst);
-	puts("lst->next");
-	printf("%p\n", lst->next);
-	puts("1: val");
-	printf("%p\n", lst->next->prev);
-	puts("");
-	printf("%p\n", lst->value);
-	printf("%p\n", lst->prev->value);
-	printf("%p\n", lst->prev->next);
+
+	COL_BLU
+
+	ft_lstiter(lst, print);
+
+	// printf("%p\n", lst);
+	// puts("lst->next");
+	// printf("%p\n", lst->next);
+	// puts("1: val");
+	// printf("%p\n", lst->next->prev);
+	// puts("");
+	// printf("%p\n", lst->value);
+	// printf("%p\n", lst->prev->value);
+	// printf("%p\n", lst->prev->next);
+
 	// printf("%p\n", lst->prev->prev->prev);
 // printf("%ld: %p\n", lst->value, lst);
 // printf("prev: %p\n", lst->prev);
