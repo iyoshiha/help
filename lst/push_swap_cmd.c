@@ -1,10 +1,9 @@
 #include "../include/push_swap.h"
 
-void	swap(t_list *nil)
+void	swap(t_list *nil) // sa, sb, ss
 {
 	t_list	*second;
 	t_list	*top;
-
 
 	// first->prev = NULL, first->next = second ; => first->prev = second, first->next = third
 	top = nil->next;

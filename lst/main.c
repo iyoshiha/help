@@ -17,6 +17,7 @@ int main(int argc, char **v)
 	t_list *lst;
 	t_list *blst;
 
+	printf("%llx\n", lst);
 	lst = bi_ring_lst_init_nil(NIL);
 		printf("i : %d: %p\n",0 ,lst);
 	for (int i = 1; i < argc; i++)
@@ -27,30 +28,42 @@ int main(int argc, char **v)
 	}
 		blst = bi_ring_lst_init_nil(NIL);
 		bi_ring_lstadd_back(blst, bi_ring_lstnew(20));
+
+		COLOR_BLU
 		ft_lstiter(lst, print);
+		COLOR_GRE
+		ft_lstiter(blst, print);
+
 		// swap(lst);
-	rotate(lst);
-	COL_BLU
-	ft_lstiter(lst, print);
-	rotate(lst);
-	COL_RED
-	ft_lstiter(lst, print);
-	rotate(lst);
-	COL_YEL
-	ft_lstiter(lst, print);
-	COL_GRE
+	push(blst, lst);
+		COLOR_BLU
+		ft_lstiter(lst, print);
+		COLOR_GRE
+		ft_lstiter(blst, print);
+
+	push(blst, lst);
+		COLOR_BLU
+		ft_lstiter(lst, print);
+		COLOR_GRE
+		ft_lstiter(blst, print);
+
+		COLOR_BLU
 	printf("%lx\n%ld\n%ld\n", lst->value, lst->next->value, lst->prev->value);
+		COLOR_GRE
+	printf("%lx\n%ld\n%ld\n", blst->value, blst->next->value, blst->prev->value);
+		/*
 
 	reverse_rotate(lst);
-	COL_BLU
+	COLOR_BLU
 	ft_lstiter(lst, print);
 	reverse_rotate(lst);
-	COL_RED
+	COLOR_RED
 	ft_lstiter(lst, print);
 	reverse_rotate(lst);
-	COL_YEL
+	COLOR_YEL
 	ft_lstiter(lst, print);
 	printf("%lx\n%ld\n%ld\n", lst->value, lst->next->value, lst->prev->value);
+*/
 
 	// printf("%p\n", lst);
 	// puts("lst->next");
