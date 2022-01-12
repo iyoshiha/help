@@ -9,10 +9,8 @@ void	swap(t_list *nil)
 	// first->prev = NULL, first->next = second ; => first->prev = second, first->next = third
 	top = nil->next;
 	second = top->next; // second->prev = first , second->next = third ; => second->prev = NULL, second->next = first;
-
 	top->prev->next = second;
 	second->next->prev = top;
-
 	top->next = second->next;
 	top->prev = second;
 	second->next = top;
