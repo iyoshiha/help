@@ -8,6 +8,10 @@ void	swap(t_list *nil) // sa, sb, ss
 	// first->prev = NULL, first->next = second ; => first->prev = second, first->next = third
 	top = nil->next;
 	second = top->next; // second->prev = first , second->next = third ; => second->prev = NULL, second->next = first;
+	if (top == nil || top->next == nil){
+		puts("do nothing ");
+		return ;
+	}
 	top->prev->next = second;
 	second->next->prev = top;
 	top->next = second->next;
@@ -49,12 +53,12 @@ void	push(t_list *dst_nil, t_list *src_nil)
 	t_list	*dst_top;
 	t_list	*src_top;
 
-	dst_top = dst_nil->next;
 	src_top = src_nil->next;
-
+	if (src_top == src_nil)
+		return ;
+	dst_top = dst_nil->next;
 	src_nil->next = src_top->next;
 	(src_top->next)->prev = src_nil;
-
 	// src : nil, src->next : top;
 	src_top->prev = dst_nil;
 	src_top->next = dst_top;
@@ -67,10 +71,12 @@ void	push(t_list *dst_nil, t_list *src_nil)
 void	rotate(t_list *nil)
 {
 	t_list *top;
-	t_list *btm;
 	t_list *second;
+	t_list *btm;
 
 	top = nil->next;
+	if (top == nil)
+		return ;
 	btm = nil->prev;
 	second = top->next;
 
@@ -89,6 +95,8 @@ void	reverse_rotate(t_list *nil)
 	t_list *btm_2nd;
 
 	top = nil->next;
+	if (top == nil)
+		return ;
 	btm = nil->prev;
 	btm_2nd = btm->prev;
 	btm->next = top;

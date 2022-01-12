@@ -40,16 +40,29 @@ int main(int argc, char **v)
 		ft_lstiter(lst, print);
 		COLOR_GRE
 		ft_lstiter(blst, print);
+		puts("");
 
+	push(blst, lst);
 	push(blst, lst);
 		COLOR_BLU
 		ft_lstiter(lst, print);
 		COLOR_GRE
 		ft_lstiter(blst, print);
+		COLOR_DEF
+		swap(lst);
+	push(blst, lst);
+		COLOR_LBLU
+		ft_lstiter(blst, print);
+		COLOR_PUR
+	push(blst, lst);
+	COLOR_WHIT
+		ft_lstiter(blst, print);
+	COLOR_BLK
+	rotate(lst);
+	reverse_rotate(lst);
 
 		COLOR_BLU
 	printf("%lx\n%ld\n%ld\n", lst->value, lst->next->value, lst->prev->value);
-		COLOR_GRE
 	printf("%lx\n%ld\n%ld\n", blst->value, blst->next->value, blst->prev->value);
 		/*
 
@@ -83,7 +96,6 @@ int main(int argc, char **v)
 	for (t_list *i = lst->next; lst->value != NIL; i = lst->next)
 		printf("%ld\n", lst->value);
 		*/
-	bi_ring_lstclear(&lst);
 
 
 	return 0;
