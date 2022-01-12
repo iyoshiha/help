@@ -1,5 +1,5 @@
 #include "../include/push_swap.h"
-#include "/Users/iyoshiha/include/col_macros.h"
+#include "/Users/iyoshiha/include/color_macros.h"
 #include "libft_bonus.h"
 
 void print(t_list *p)
@@ -38,6 +38,19 @@ int main(int argc, char **v)
 	rotate(lst);
 	COL_YEL
 	ft_lstiter(lst, print);
+	COL_GRE
+	printf("%lx\n%ld\n%ld\n", lst->value, lst->next->value, lst->prev->value);
+
+	reverse_rotate(lst);
+	COL_BLU
+	ft_lstiter(lst, print);
+	reverse_rotate(lst);
+	COL_RED
+	ft_lstiter(lst, print);
+	reverse_rotate(lst);
+	COL_YEL
+	ft_lstiter(lst, print);
+	printf("%lx\n%ld\n%ld\n", lst->value, lst->next->value, lst->prev->value);
 
 	// printf("%p\n", lst);
 	// puts("lst->next");
