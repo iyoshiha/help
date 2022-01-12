@@ -8,10 +8,8 @@ void	swap(t_list *nil) // sa, sb, ss
 	// first->prev = NULL, first->next = second ; => first->prev = second, first->next = third
 	top = nil->next;
 	second = top->next; // second->prev = first , second->next = third ; => second->prev = NULL, second->next = first;
-	if (top == nil || top->next == nil){
-		puts("do nothing ");
+	if (top == nil || top->next == nil)
 		return ;
-	}
 	top->prev->next = second;
 	second->next->prev = top;
 	top->next = second->next;
