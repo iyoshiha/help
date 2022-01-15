@@ -1,8 +1,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-#include "../lst/libft_bonus.h"
-
+#include "/Users/iyoshiha/include/libft.h"
 
 #define NIL	0x7FFFFFFFFFFFFFFF
 
