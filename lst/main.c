@@ -96,7 +96,5 @@ int main(int argc, char **v)
 	for (t_list *i = lst->next; lst->value != NIL; i = lst->next)
 		printf("%ld\n", lst->value);
 		*/
-
-
 	return 0;
 }
