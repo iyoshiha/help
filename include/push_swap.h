@@ -4,7 +4,6 @@
 
 #define NIL	0x7FFFFFFFFFFFFFFF
 
-
 void	swap(t_list *nil);
 void	push(t_list *dst_nil, t_list *src_nil);
 void	rotate(t_list *nil);
