@@ -13,10 +13,10 @@ typedef struct	s_stack
 
 }				t_stack;
 
-void	swap(t_list *nil);
-void	push(t_list *dst_nil, t_list *src_nil);
-void	rotate(t_list *nil);
-void	reverse_rotate(t_list *nil);
+void	swap(t_bi_list *nil);
+void	push(t_bi_list *dst_nil, t_bi_list *src_nil);
+void	rotate(t_bi_list *nil);
+void	reverse_rotate(t_bi_list *nil);
 
 
 #endif
