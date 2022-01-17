@@ -1,9 +1,9 @@
 #include "include/push_swap.h"
 
-void	swap(t_list *nil) // sa, sb, ss
+void	swap(t_bi_list *nil) // sa, sb, ss
 {
-	t_list	*top;
-	t_list	*second;
+	t_bi_list	*top;
+	t_bi_list	*second;
 
 	// first->prev = NULL, first->next = second ; => first->prev = second, first->next = third
 	top = nil->next;
@@ -44,12 +44,12 @@ void	swap(t_list *nil) // sa, sb, ss
 	this changes next of swaped element. and prev of swapped elem.
 */
 
-void	push(t_list *dst_nil, t_list *src_nil)
+void	push(t_bi_list *dst_nil, t_bi_list *src_nil)
 {
 	// mv first element of src to top of dst
 	// del top of dst; (second prev points nil)
-	t_list	*dst_top;
-	t_list	*src_top;
+	t_bi_list	*dst_top;
+	t_bi_list	*src_top;
 
 	src_top = src_nil->next;
 	if (src_top == src_nil)
@@ -66,11 +66,11 @@ void	push(t_list *dst_nil, t_list *src_nil)
 	// done dst stack
 }
 
-void	rotate(t_list *nil)
+void	rotate(t_bi_list *nil)
 {
-	t_list *top;
-	t_list *second;
-	t_list *btm;
+	t_bi_list *top;
+	t_bi_list *second;
+	t_bi_list *btm;
 
 	top = nil->next;
 	if (top == nil)
@@ -86,11 +86,11 @@ void	rotate(t_list *nil)
 	second->prev = nil;
 }
 
-void	reverse_rotate(t_list *nil)
+void	reverse_rotate(t_bi_list *nil)
 {
-	t_list *top;
-	t_list *btm;
-	t_list *btm_2nd;
+	t_bi_list *top;
+	t_bi_list *btm;
+	t_bi_list *btm_2nd;
 
 	top = nil->next;
 	if (top == nil)
