@@ -4,6 +4,7 @@
 #define err 0
 
 #define NIL 0xffffffff
+# define IS_NIL 1
 #define PS_ARG_NUM 0
 #define PS_SORTED_NUM 1
 #define PS_SORTED_INDEX 2
@@ -28,4 +29,6 @@ void	set_index(int ***num_info, int *num);
 int	*create_num_ary(int len, char **num_str);
 t_bi_list	*lst_a(void);
 t_bi_list	*lst_b(void);
+void	bi_ring_lst_init(int **ary);
+
 #endif

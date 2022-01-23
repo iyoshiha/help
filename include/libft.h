@@ -6,7 +6,7 @@
 /*   By: iyoshiha <iyoshiha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 06:46:34 by iyoshiha          #+#    #+#             */
-/*   Updated: 2022/01/23 23:29:56 by iyoshiha         ###   ########.fr       */
+/*   Updated: 2022/01/23 23:42:26 by iyoshiha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define LIBFT_H
 # include <libc.h>
 # include "get_next_line.h"
-# define NIL	0x7FFFFFFFFFFFFFFF
-# define IS_NIL 1
 
 typedef char	t_bool;
 typedef int		t_swap_num;
@@ -102,9 +100,6 @@ void bi_ring_lstiter(t_bi_list *lst, void (*f)(void *));
 t_bi_list	*bi_ring_lstnew(unsigned int value);
 size_t bi_ring_lstsize(t_bi_list *lst);
 
-t_bi_list	*lst_a();
-t_bi_list	*lst_b();
-void	bi_ring_lst_init();
 
 int		ft_printf(const char	*format, ...);
 t_swap_num	bubble_sort(int *num, int len2sort, t_e_order order);
