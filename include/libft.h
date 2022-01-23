@@ -6,7 +6,7 @@
 /*   By: iyoshiha <iyoshiha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 06:46:34 by iyoshiha          #+#    #+#             */
-/*   Updated: 2022/01/23 23:42:26 by iyoshiha         ###   ########.fr       */
+/*   Updated: 2022/01/23 23:50:00 by iyoshiha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <libc.h>
 # include "get_next_line.h"
+# define NIL 0xffffffff
+# define IS_NIL 1
 
 typedef char	t_bool;
 typedef int		t_swap_num;
@@ -33,10 +35,10 @@ typedef struct      s_list
 
 typedef struct      s_bi_list
 {
-    struct s_bi_list	*next;
-    struct s_bi_list	*prev;
-	long				index;
-	t_bool				is_nil;
+    struct s_bi_list   *next;
+    struct s_bi_list   *prev;
+    unsigned int		value;
+	t_bool			is_nil;
 }                   t_bi_list;
 
 typedef struct		s_sort_index
@@ -82,15 +84,15 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-void ft_lstclear(t_bi_list **lst, void (*del)(void *));
-void ft_lstdelone(t_bi_list *lst, void (*del)(void *));
-void ft_lstiter(t_bi_list *lst, void (*f)(void *));
-t_bi_list	*ft_lstlast(t_bi_list *lst);
-t_bi_list	*ft_lstmap(t_bi_list *lst, void *(*f)(void *), void (*del)(void *));
-t_bi_list	*ft_lstnew(void *content);
-size_t ft_lstsize(t_bi_list *lst);
-void ft_lstadd_back(t_bi_list **lst, t_bi_list *new);
-void ft_lstadd_front(t_bi_list **lst, t_bi_list *new);
+void ft_lstclear(t_list **lst, void (*del)(void *));
+void ft_lstdelone(t_list *lst, void (*del)(void *));
+void ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstnew(void *content);
+size_t ft_lstsize(t_list *lst);
+void ft_lstadd_back(t_list **lst, t_list *new);
+void ft_lstadd_front(t_list **lst, t_list *new);
 
 void bi_ring_lstadd_back(t_bi_list *nil, t_bi_list *new);
 void bi_ring_lstadd_front(t_bi_list *nil, t_bi_list *new);
@@ -99,7 +101,7 @@ void bi_ring_lstdel_one(t_bi_list *lst);
 void bi_ring_lstiter(t_bi_list *lst, void (*f)(void *));
 t_bi_list	*bi_ring_lstnew(unsigned int value);
 size_t bi_ring_lstsize(t_bi_list *lst);
-
+t_bi_list	*bi_ring_lst_init_nil(unsigned int val);
 
 int		ft_printf(const char	*format, ...);
 t_swap_num	bubble_sort(int *num, int len2sort, t_e_order order);
@@ -109,5 +111,5 @@ t_swap_num	bubble_sort(int *num, int len2sort, t_e_order order);
 /*
 	You need to change NIL value depending on the situation.
 	current value is below:
-	#define NIL	0x7FFFFFFFFFFFFFFF
+	#define NIL	0xffffffff
 */
