@@ -5,62 +5,20 @@
 int ft_mod_atoi(const char *str);
 int	get_pivot(t_stack *stack);
 
-int	*dup_ary(char *ary)
-{
-	size_t	i;
-	int		*new_ary;
-	int		len;
-
-	i = 0;
-	len = get_len();
-	new_ary = malloc(sizeof(int) * len);
-	if (!new_ary)
-		err_handle();
-	while (i < len)
-	{
-		new_ary[i] = ary[i];
-		i++;
-	}
-	return (new_ary);
-}
 
 
 
 
-static void	init_stack(t_stack *stack, int len, char **argv)
+
+static void	init_stack(t_stack *stack, int len, int *num)
 {
 	stack->a = lst_a();
 	stack->b = lst_b();
 	stack->len = len;
-	stack->num = create_num_ary(len, argv);
+	stack->num = num;
 }
 
-void	set_index(int ***num_info, int *num)
-{
-	t_sort_index	i;
-	int len;
-	int **ary;
 
-	i.i = 0;
-	len = get_len();
-	ary = *(num_info);
-	ary[PS_ARG_NUM] = num;
-	ary[PS_SORTED_NUM] = dup_ary(num);
-	bubble_sort(ary[PS_SORTED_NUM], len, asc);
-	while (i.i < len)
-	{
-		i.j = 0;
-		while (i.j < len)
-		{
-			if (ary[PS_ARG_NUM][i.i]== ary[PS_SORTED_NUM][i.j++])
-			{
-				ary[PS_SORTED_INDEX][i.i] = --i.j;
-				break ;
-			}
-		}
-		i.i++;
-	}
-}
 
 // void push_swap()
 // {
@@ -69,20 +27,43 @@ void	set_index(int ***num_info, int *num)
 // 	return ;
 // }
 
+void p2(t_bi_list *a){
+printf("%u ", a->value);
+sleep(1);
+}
+
+void p(void *a){
+p2((t_bi_list*)a);
+}
+
 int main(int argc, char **argv)
 {
 	t_stack stack;
 	int		**num_info;
+	int		*ary;
 
 	init_len(argc - 1);
-	argv++;
+	ary = create_num_ary(get_len(), (++argv));
 	num_info = (int **)malloc(sizeof(int *) * 3);
 	if (!num_info)
 		err_handle();
-	set_index(&num_info, argv);
-	bi_ring_lst_init(num_info);
-	init_stack(&stack, get_len(), argv);
+	set_index(&num_info, ary);
+	init_bi_ring_lst(num_info);
+	init_stack(&stack, get_len(), ary);
+
+	printf("%u \n", stack.a->value);
+	printf("%u \n", stack.a->next->next->value);
+	printf("%u \n", stack.a->next->next->next->next->value);
+	printf("%u \n", stack.a->next->next->next->next->next->value);
+	printf("%u \n", stack.a->next->next->next->next->next->next->value);
+	// bi_ring_lstiter(lst_a(), p);
 	// push_swap();
 
+	for (int i = 0; i < get_len(); i++)
+	printf("a:%d ", num_info[PS_ARG_NUM][i]);
+	for (int i = 0; i < get_len(); i++)
+	printf("b:%d ", num_info[PS_SORTED_NUM][i]);
+	for (int i = 0; i < get_len(); i++)
+	printf("c: %d ", num_info[PS_SORTED_INDEX][i]);
 	return 0;
 }

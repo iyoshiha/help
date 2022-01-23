@@ -12,8 +12,8 @@ int	*create_num_ary(int len, char **num_str)
 	while (i < len)
 	{
 		num[i] = ft_mod_atoi(num_str[i]);
-		if (num[i] == err)
-			err_handle();
+		// if (num[i] == err)
+			// err_handle();
 		i++;
 	}
 	return (num);

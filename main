@@ -2,11 +2,10 @@
 #include "/Users/iyoshiha/include/libft.h"
 #include "/Users/iyoshiha/include/color_macros.h"
 
-int *f();
 
-int main()
+int main(int c, char **v)
 {
-	*f() = 10;
-	printf("%d\n", *f());
+for (int i = 0; i < 4; i++)
+	printf("%s\n", v[i]);
 	return 0;
 }

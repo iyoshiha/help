@@ -29,6 +29,7 @@ void	set_index(int ***num_info, int *num);
 int	*create_num_ary(int len, char **num_str);
 t_bi_list	*lst_a(void);
 t_bi_list	*lst_b(void);
-void	bi_ring_lst_init(int **ary);
+void	init_bi_ring_lst(int **ary);
+int ft_mod_atoi(const char *str);
 
 #endif

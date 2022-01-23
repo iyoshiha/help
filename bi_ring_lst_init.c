@@ -20,11 +20,11 @@ static t_bi_list* init(t_bi_list *a)
 	a->is_nil = 1;
 	a->next = a;
 	a->prev = a;
-	a->index = NIL;
+	a->value = NIL;
 	return (a);
 }
 
-void	bi_ring_lst_init(int **ary)
+void	init_bi_ring_lst(int **ary)
 {
 	t_bi_list	*a;
 	t_bi_list	*tmp;
