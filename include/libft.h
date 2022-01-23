@@ -6,7 +6,7 @@
 /*   By: iyoshiha <iyoshiha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 06:46:34 by iyoshiha          #+#    #+#             */
-/*   Updated: 2022/01/18 00:20:15 by iyoshiha         ###   ########.fr       */
+/*   Updated: 2022/01/23 21:33:35 by iyoshiha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ typedef struct      s_list
 
 typedef struct      s_bi_list
 {
-    struct s_bi_list   *next;
-    struct s_bi_list   *prev;
-    long			value;
-	t_bool			is_nil;
+    struct s_bi_list	*next;
+    struct s_bi_list	*prev;
+	unsigned int		index;
+	t_bool				is_nil;
+
 }                   t_bi_list;
 
 typedef struct		s_sort_index
@@ -101,7 +102,10 @@ void bi_ring_lstdel_one(t_bi_list *lst);
 void bi_ring_lstiter(t_bi_list *lst, void (*f)(void *));
 t_bi_list	*bi_ring_lstnew(long value);
 size_t bi_ring_lstsize(t_bi_list *lst);
-t_bi_list	*bi_ring_lst_init_nil(long val);
+
+t_bi_list	*lst_a();
+t_bi_list	*lst_b();
+void	bi_ring_lst_init();
 
 int		ft_printf(const char	*format, ...);
 t_swap_num	bubble_sort(int *num, int len2sort, t_e_order order);
