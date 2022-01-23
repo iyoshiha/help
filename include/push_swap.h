@@ -14,7 +14,6 @@ typedef struct	s_stack
 	t_bi_list	*b;
 	size_t		len;
 	int			*num;
-
 }				t_stack;
 
 void	swap(t_bi_list *nil);
@@ -22,9 +21,11 @@ void	push(t_bi_list *dst_nil, t_bi_list *src_nil);
 void	rotate(t_bi_list *nil);
 void	reverse_rotate(t_bi_list *nil);
 void	err_handle(void);
+void	init_len(int len);
 int	get_len(void);
 int *len_ptr(void);
 void	set_index(int ***num_info, int *num);
 int	*create_num_ary(int len, char **num_str);
-
+t_bi_list	*lst_a(void);
+t_bi_list	*lst_b(void);
 #endif

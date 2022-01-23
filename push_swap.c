@@ -25,7 +25,7 @@ int	*dup_ary(char *ary)
 }
 
 
-		// bi_ring_lstadd_back(lst_a(), bi_ring_lstnew(num[i++]));
+
 
 static void	init_stack(t_stack *stack, int len, char **argv)
 {
@@ -62,24 +62,27 @@ void	set_index(int ***num_info, int *num)
 	}
 }
 
-void push_swap()
-{
-	int i;
+// void push_swap()
+// {
+// 	int i;
 
-	return ;
-}
+// 	return ;
+// }
 
 int main(int argc, char **argv)
 {
 	t_stack stack;
 	int		**num_info;
 
-	bi_ring_lst_init();
-	*len_ptr() = --argc;
-	init_stack(&stack, get_len(), ++argv);
+	init_len(argc - 1);
+	argv++;
 	num_info = (int **)malloc(sizeof(int *) * 3);
+	if (!num_info)
+		err_handle();
 	set_index(&num_info, argv);
-	push_swap();
+	bi_ring_lst_init(num_info);
+	init_stack(&stack, get_len(), argv);
+	// push_swap();
 
 	return 0;
 }
