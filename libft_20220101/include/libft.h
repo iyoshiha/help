@@ -6,7 +6,7 @@
 /*   By: iyoshiha <iyoshiha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 06:46:34 by iyoshiha          #+#    #+#             */
-/*   Updated: 2022/01/23 23:36:35 by iyoshiha         ###   ########.fr       */
+/*   Updated: 2022/01/24 23:23:27 by iyoshiha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <libc.h>
 # include "get_next_line.h"
-# define NIL	0x7FFFFFFFFFFFFFFF
 # define IS_NIL 1
 
 typedef char	t_bool;

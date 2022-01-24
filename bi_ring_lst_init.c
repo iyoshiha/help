@@ -4,6 +4,8 @@
 t_bi_list	*lst_a()
 {
 	static t_bi_list	nil;
+	printf("in lst_a is_nil ptr: %p\n", &nil.is_nil);
+	printf("in lst_a lst       : %p\n", &nil);
 
 	return &nil;
 }

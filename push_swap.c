@@ -29,7 +29,7 @@ static void	init_stack(t_stack *stack, int len, int *num)
 
 
 void p(void *a){
-printf("%u  ", ((t_bi_list*)a)->value);
+	return ;
 }
 
 int main(int argc, char **argv)
@@ -55,7 +55,9 @@ int main(int argc, char **argv)
 	// printf("%u \n", stack.a->next->next->next->next->next->value);
 	bi_ring_lstiter(lst_a(), p);
 	// push_swap();
-
+	printf("in main %d\n", stack.a->is_nil);
+	printf("in main %p\n", &stack.a->is_nil);
+	printf("f ptr lst_a %p", lst_a);
 	// for (int i = 0; i < get_len(); i++)
 	// printf("a:%d ", num_info[PS_ARG_NUM][i]);
 	// for (int i = 0; i < get_len(); i++)
