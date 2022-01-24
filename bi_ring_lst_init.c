@@ -15,9 +15,10 @@ t_bi_list	*lst_b()
 	return &nil;
 }
 
-static t_bi_list* init(t_bi_list *a)
+static t_bi_list* init_nil(t_bi_list *a)
 {
-	a->is_nil = 1;
+	a->is_nil = IS_NIL;
+	printf("in bili:a->is_nil: %d\n", a->is_nil);
 	a->next = a;
 	a->prev = a;
 	a->value = NIL;
@@ -33,8 +34,8 @@ void	init_bi_ring_lst(int **ary)
 
 	i = 0;
 	len = get_len();
-	a = init(lst_a());
-	init(lst_b());
+	a = init_nil(lst_a());
+	init_nil(lst_b());
 	while (i < len)
 	{
 		tmp = bi_ring_lstnew(ary[PS_SORTED_INDEX][i++]);
